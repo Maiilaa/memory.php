@@ -1,0 +1,124 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #444;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.memory-game {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+/* Styles des cartes */
+.memory-card {
+    perspective: 1000px; /* Pour l'effet de retournement */
+}
+
+.memory-card label {
+    display: block;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.memory-card input[type="checkbox"] {
+    display: none;
+}
+
+.memory-card input[type="checkbox"]:checked + .card-content {
+    transform: rotateY(180deg);
+}
+
+.card-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+
+.card-back, .card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.card-back {
+    background-color:rgb(10, 90, 110);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-back img {
+    max-width: 80px;
+}
+
+
+.card-front {
+    transform: rotateY(180deg);
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-front img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+button {
+    background-color: rgb(10, 90, 110);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: rgb(10, 90, 110);
+}
+
+select {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+label {
+    font-size: 1rem;
+    margin-right: 10px;
+}

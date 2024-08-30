@@ -1,3 +1,11 @@
+<?php
+session_start();
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nom'])) {
+    $_SESSION['nom'] = $_POST['nom'];
+    header("Location: card.php"); 
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,10 +18,10 @@
     <main>
         <?php include '_header.php'; ?>
         <form action="index.php" method="post">
-            <label for="Nom">Entrez votre nom</label>
-            <input type="Nom" name="Nom">
-            <button type="submit">Jouer</button>
-
+            <label for="nom">Nom du joueur :</label>
+            <input type="text" id="nom"name="nom" required>
+            <button type="submit">Commencer à jouer</button>
+        </form>
     </main>
 </body>
 </html>
