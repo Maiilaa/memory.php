@@ -1,4 +1,24 @@
+body{
+    background-color: rgb(221, 221, 221);
+}
 h1{
     text-align: center;
-    color:rgb(250, 67, 67);
+    color:rgb(10, 90, 110);
+}
+
+label {
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+button {
+    background-color: rgb(10, 90, 110);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
 }
