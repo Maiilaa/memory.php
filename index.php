@@ -5,6 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nom'])) {
     header("Location: card.php"); 
     exit;
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

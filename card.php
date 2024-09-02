@@ -34,6 +34,9 @@ $memoryCards = [];
 foreach ($cards as $image) {
     $memoryCards[] = new Card($image);
 }
+if (!isset($_SESSION['flipped_cards'])) {
+    $_SESSION['flipped_cards'] = [];
+}
 
 
 if (!isset($_SESSION['moves'])) {
