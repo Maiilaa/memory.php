@@ -21,7 +21,7 @@ if (!isset($_SESSION['nom'])) {
 }
 
 require_once 'Card.php';
-$images = ['Assets/images/mwali.png', 'Assets/images/france.png', 'Assets/images/comores.png', 'Assets/images/maore.jpg', 'Assets/images/ndzuwani.jpg', 'Assets/images/ngazidja.jpg'];
+$images = ['Assets/images/djibouti.png', 'Assets/images/malaisie.png', 'Assets/images/maldives.png', 'Assets/images/oman.png', 'Assets/images/seychelles.png', 'Assets/images/somalie.png','Assets/images/mwali.png', 'Assets/images/france.png', 'Assets/images/comores.png', 'Assets/images/maore.jpg', 'Assets/images/ndzuwani.jpg', 'Assets/images/ngazidja.jpg'];
 $paires = isset($_POST['paires']) ? (int)$_POST['paires'] : 6; 
 
 // Randomly select images based on the number of pairs
@@ -85,6 +85,9 @@ if (!isset($_SESSION['moves'])) {
     </div>
     <form action="logout.php" method="POST">
         <button type="submit">Quitter le jeu</button>
+    </form>
+    <form action="classement.php" method="POST">
+        <button type="submit">Voir le classement</button>
     </form>
 </body>
 </html>
