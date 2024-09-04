@@ -34,14 +34,32 @@ $memoryCards = [];
 foreach ($cards as $image) {
     $memoryCards[] = new Card($image);
 }
+if (!isset($_SESSION['moves'])) {
+    $_SESSION['moves'] = 0;
+}
+
 if (!isset($_SESSION['flipped_cards'])) {
     $_SESSION['flipped_cards'] = [];
 }
 
-
-if (!isset($_SESSION['moves'])) {
-    $_SESSION['moves'] = 0; 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['card_id'])) {
+    $card_id = $_POST['card_id'];
+    $_SESSION['flipped_cards'][] = $card_id;
+    if (count($_SESSION['flipped_cards']) == 2) {
+        $_SESSION['moves']++;
+        $card1 = $_SESSION['flipped_cards'][0];
+        $card2 = $_SESSION['flipped_cards'][1];
+        if ($card1 == $card2) {
+            echo "Vous avez trouvé une paire!";
+        } else {
+            echo "Les cartes ne correspondent pas.";
+        }
+        $_SESSION['flipped_cards'] = [];
+    }
 }
+
+
+
 ?>
 
 <!DOCTYPE html>
